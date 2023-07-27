@@ -1,0 +1,16 @@
+[ {
+  "filePath" : "recognition/runtime/list_images_solution.py",
+  "recommendationId" : "security-5a8195d650ef95ce02ede70f860d40d065607b50da7a3be938162f3",
+  "startLine" : 11,
+  "endLine" : 11,
+  "description" : "The API method `scan` returns paginated results instead of all results. Consider using the pagination API or checking one of the following keys in the response to verify that all results were returned: `ExclusiveStartKey`, `IsTruncated`, `LastEvaluatedKey`, `NextToken`.\n\n[Learn more](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/paginators.html)",
+  "recommendationCategory" : "CodeMaintenanceIssues",
+  "ruleMetadata" : {
+    "ruleId" : "python/missing-pagination@v1.0",
+    "ruleName" : "Missing pagination",
+    "shortDescription" : "Missing pagination on a paginated call can lead to inaccurate results.",
+    "longDescription" : "Missing pagination on a paginated call can lead to inaccurate results. One must paginate to ensure additional results are not present, before returning the results.",
+    "ruleTags" : [ "aws-python-sdk", "data-integrity", "security", "security-context", "cwe-19", "python" ]
+  },
+  "severity" : "Medium"
+} ]

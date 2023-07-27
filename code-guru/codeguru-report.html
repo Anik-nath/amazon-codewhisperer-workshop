@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h2>CodeGuru Reviewer Recommendations</h2>
+<p><strong>CodeGuru Repository ARN</strong>: <a href="https://console.aws.amazon.com/codeguru/reviewer?region=us-east-1#/ciworkflows/associationdetails/arn:aws:codeguru-reviewer:us-east-1:744092167951:association:b5a99a76-e59a-4c4e-bd64-2f9422d0f7f6">arn:aws:codeguru-reviewer:us-east-1:744092167951:association:b5a99a76-e59a-4c4e-bd64-2f9422d0f7f6</a></p>
+<p><strong>CodeGuru Scan ARN</strong>: <a href="https://console.aws.amazon.com/codeguru/reviewer?region=us-east-1#/codereviews/details/arn:aws:codeguru-reviewer:us-east-1:744092167951:association:b5a99a76-e59a-4c4e-bd64-2f9422d0f7f6:code-review:RepositoryAnalysis-codeguru-reviewer-cli-ab97d032-415d-4f58-a174-b1386a274ac8">arn:aws:codeguru-reviewer:us-east-1:744092167951:association:b5a99a76-e59a-4c4e-bd64-2f9422d0f7f6:code-review:RepositoryAnalysis-codeguru-reviewer-cli-ab97d032-415d-4f58-a174-b1386a274ac8</a></p>
+
+<br/><hr style="width:90%"><br/>
+<h3>In: <a href="file:///home/ec2-user/SageMaker/amazon-codewhisperer-workshop/python/recognition/runtime/list_images_solution.py">/home/ec2-user/SageMaker/amazon-codewhisperer-workshop/python/recognition/runtime/list_images_solution.py</a> L11</h3>
+<p><strong>Issue:</strong> The API method <code>scan</code> returns paginated results instead of all results. Consider using the pagination API or checking one of the following keys in the response to verify that all results were returned: <code>ExclusiveStartKey</code>, <code>IsTruncated</code>, <code>LastEvaluatedKey</code>, <code>NextToken</code>.</p>
+<p><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/paginators.html">Learn more</a></p>
+<p><strong>Severity:</strong> Medium<p/><p><strong>Rule ID:</strong> python/missing-pagination@v1.0<p/><p><strong>Rule Name:</strong> Missing pagination<p/><p><strong>Description:</strong> Missing pagination on a paginated call can lead to inaccurate results. One must paginate to ensure additional results are not present, before returning the results.</p>
+<p><strong>Tags:</strong></p>
+<ul>
+<li>aws-python-sdk</li>
+<li>data-integrity</li>
+<li>security</li>
+<li>security-context</li>
+<li>cwe-19</li>
+<li>python</li>
+</ul>
+
+<hr style="width:80%">
+</body>
+</html>

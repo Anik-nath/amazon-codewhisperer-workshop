@@ -1,0 +1,46 @@
+{
+  "$schema" : "http://json.schemastore.org/sarif-2.1.0-rtm.4",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeGuru Reviewer Scanner",
+        "informationUri" : "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/how-codeguru-reviewer-works.html",
+        "rules" : [ {
+          "id" : "python/missing-pagination@v1.0",
+          "name" : "Missing pagination",
+          "shortDescription" : {
+            "text" : "Missing pagination"
+          },
+          "fullDescription" : {
+            "text" : "Missing pagination on a paginated call can lead to inaccurate results."
+          },
+          "defaultConfiguration" : { },
+          "help" : {
+            "text" : "Missing pagination on a paginated call can lead to inaccurate results. One must paginate to ensure additional results are not present, before returning the results."
+          },
+          "properties" : {
+            "tags" : [ "security-context", "security", "python", "aws-python-sdk", "data-integrity", "cwe-19" ]
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "python/missing-pagination@v1.0",
+      "message" : {
+        "markdown" : "The API method `scan` returns paginated results instead of all results. Consider using the pagination API or checking one of the following keys in the response to verify that all results were returned: `ExclusiveStartKey`, `IsTruncated`, `LastEvaluatedKey`, `NextToken`.\n\n[Learn more](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/paginators.html)"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "recognition/runtime/list_images_solution.py"
+          },
+          "region" : {
+            "startLine" : 11,
+            "endLine" : 11
+          }
+        }
+      } ]
+    } ]
+  } ]
+}
